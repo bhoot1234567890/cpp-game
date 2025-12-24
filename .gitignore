@@ -1,0 +1,8 @@
+# Build artifacts
+game
+
+# OS files
+.DS_Store
+
+# Editor
+.vscode/

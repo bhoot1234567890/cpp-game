@@ -1,0 +1,138 @@
+A:
+  start:
+    text: "Psst—hey! New face in the maze. I'm A: part greeter, part gossip, full-time professional over-explainer."
+    choices:
+      1:
+        text: "Who are you, really?"
+        next: who
+      2:
+        text: "What is this place?"
+        next: place
+      3:
+        text: "I should go."
+        next: end
+  who:
+    text: "I keep watch so the maze doesn't bully newcomers. Also: I collect dramatic pauses."
+    choices:
+      1:
+        text: "Help me out?"
+        next: help
+      2:
+        text: "Thanks."
+        next: end
+  place:
+    text: "They call it the Ancient Maze of Code. Mostly because 'Hallway of Mild Inconveniences' didn't test well."
+    choices:
+      1:
+        text: "Any advice?"
+        next: advice
+      2:
+        text: "Thanks."
+        next: end
+  help:
+    text: "Sure. Talk to B if you want street-smart tips. Talk to C if you want… puzzles and ominous vibes."
+    choices:
+      1:
+        text: "Where are they?"
+        next: find
+      2:
+        text: "Got it."
+        next: end
+  advice:
+    text: "Walls stop feet. People stop progress. Coins stop being lonely when you pick them up."
+    choices:
+      1:
+        text: "Wise."
+        next: end
+  find:
+    text: "B wanders around like they own the place. C lurks where the air feels… italic."
+    effects:
+      message: "A marked directions in your head. (Also: coins exist.)"
+    choices:
+      1:
+        text: "Thanks."
+        next: end
+  end:
+    text: "Don't get lost! If you do, pretend it's exploration."
+
+B:
+  start:
+    text: "Yo. I'm B. You look like you've never been wall-rejected before. Respect."
+    choices:
+      1:
+        text: "Do you know A?"
+        next: knowA
+      2:
+        text: "Any pro tips?"
+        next: tips
+      3:
+        text: "Bye."
+        next: end
+  knowA:
+    text: "A? Yeah. A talks so much the maze started echoing out of habit."
+    choices:
+      1:
+        text: "Ha. Thanks."
+        next: end
+  tips:
+    text: "Tip #1: If you see a shiny coin, take it. Tip #2: C's riddles? Don't overthink."
+    effects:
+      coins: 1
+      message: "B flipped you a coin for 'good vibes'."
+    choices:
+      1:
+        text: "Nice."
+        next: end
+  end:
+    text: "Later. Don't let the door win."
+
+C:
+  start:
+    text: "Ah. A seeker approaches. I am C: Keeper of Secrets, Hoarder of Riddles, Part-Time Door Enthusiast."
+    choices:
+      1:
+        text: "What secrets?"
+        next: secrets
+      2:
+        text: "Can you help me?"
+        next: help
+      3:
+        text: "I'll be going."
+        next: end
+  secrets:
+    text: "Some answers are hidden in plain sight. Some are hidden because they're embarrassing."
+    choices:
+      1:
+        text: "Noted."
+        next: end
+  help:
+    text: "I can… if you satisfy my curiosity. Riddle: What has keys but can't open locks?"
+    choices:
+      1:
+        text: "A piano."
+        next: correct
+      2:
+        text: "A map."
+        next: wrong
+      3:
+        text: "A door."
+        next: wrong
+  correct:
+    text: "Correct. The maze approves your taste. Take this: a tiny brass key that definitely isn't cursed."
+    effects:
+      key: true
+      message: "You got a key. The door on Map 1 should open now."
+    choices:
+      1:
+        text: "I accept this suspiciously specific key."
+        next: end
+  wrong:
+    text: "Incorrect. The maze emits a judgmental silence."
+    effects:
+      message: "C remains unimpressed. (Maybe try another answer.)"
+    choices:
+      1:
+        text: "Fair."
+        next: end
+  end:
+    text: "Farewell. Return when your confidence regenerates."

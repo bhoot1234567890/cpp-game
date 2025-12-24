@@ -1,0 +1,3 @@
+A: Hello! I'm A. Welcome to the game!
+B: Hi, I'm B. Have you met the others?
+C: Hey there! I'm C. Good luck on your journey!
